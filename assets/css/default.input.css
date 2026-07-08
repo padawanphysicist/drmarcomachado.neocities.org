@@ -1,0 +1,48 @@
+/* Configuração Global ---------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* 
+ * NOTA DE CONFIGURAÇÃO (Tailwind v4 + Haunt/Guile Scheme):
+ * O Tailwind v4 utiliza uma varredura agressiva (tree-shaking) e ignora variáveis do @theme 
+ * se as classes correspondentes não forem encontradas nos arquivos do projeto. Como o Haunt 
+ * utiliza arquivos `.scm` (Scheme) e `.md` (Markdown) — que não são rastreados por padrão —, 
+ * a diretiva `@source` abaixo é obrigatória para instruir o compilador do Tailwind a escanear 
+ * essas extensões e garantir que a paleta do Dr. Marco Antônio seja gerada no CSS final.
+ */
+@import "tailwindcss";
+@source "../../**/*.{scm}";
+
+@theme {
+  /* Fontes Customizadas */
+  --font-sans: Lato, sans-serif;
+  --font-serif: Playfair Display, serif;
+  
+  /**********************************/
+  /* Paleta de Cores Institucionais */
+  /**********************************/
+
+  /* Paleta 1: Clínica Orgânica */
+  /* --color-med-bg: #FDFBF7;          /\* Fundo Linho Premium *\/ */
+  /* --color-med-green: #143224;       /\* Verde Floresta Imperial *\/ */
+  /* --color-med-green-dark: #0A1B14;  /\* Quase preto botânico para rodapés *\/ */
+  /* --color-med-green-light: #224E3A; /\* Para hovers *\/ */
+  /* --color-med-gold: #D4AF37;        /\* Dourado Oliva Vivo *\/ */
+  /* --color-med-text: #1C2B24;        /\* Grafite esverdeado para leitura perfeita *\/ */
+
+  /* /\* Paleta 2: Equilíbrio Integrativo *\/ */
+  /* --color-med-bg: #F4F6F4;          /\* Fundo Mineral Calmo *\/ */
+  /* --color-med-green: #2A473E;       /\* Verde Eucalipto *\/ */
+  /* --color-med-green-dark: #192E28;  /\* Escuro fechado *\/ */
+  /* --color-med-green-light: #3D6156; /\* Verde sálvia médio para botões secundários *\/ */
+  /* --color-med-gold: #8FA89B;        /\* Verde Sálvia Macio (substituindo o ouro) *\/ */
+  /* --color-med-text: #22312C;        /\* Texto de altíssima legibilidade *\/ */
+
+  /* Paleta 3: Ciência e Terra */
+  --color-med-bg: #FAF8F5;          /* Areia da praia limpa */
+  --color-med-green: #1A3B32;       /* Verde Clínico */
+  --color-med-green-dark: #0F241F;  
+  --color-med-green-light: #2A5448; 
+  --color-med-gold: #C58B70;        /* Terracota Pachamama (substituindo o ouro) */
+  --color-med-text: #2B3330;
+}
