@@ -58,25 +58,37 @@
 ;;; Início (Hero)
 
 (define (hero-section)
-  `(section (@ (id "inicio") (class "relative min-h-screen flex py-16 md:py-20 bg-med-green overflow-hidden"))          
-            ;; 🎨 Grafismo Ajustado: Visível no mobile (com escala menor) e ampliado no desktop (md:)
-            (img (@ (class "absolute bottom-[5%] right-[-10%] scale-150 opacity-10 brightness-0 invert md:bottom-[10%] md:right-[10%] md:scale-[250%]") 
-                    (src "assets/img/grafismo.svg")))
-            
-            (div (@ (class "container mx-auto px-4 md:px-5 max-w-5xl flex items-center"))
-                 (div (@ (class "flex-1 z-10 w-full"))
-                      (h1 (@ (class "font-serif text-4xl md:text-5xl font-bold text-white/95 leading-tight tracking-tight max-w-3xl border-b-2 border-med-gold pb-3")) 
-                          "Saúde que vai à raiz.")
-                      (p (@ (class "text-base md:text-lg text-white/90 max-w-2xl mt-4 leading-relaxed"))
-                         "Consultas médicas especializadas em Cannabis medicinal com abordagem integrativa, preventiva e promotora de " 
-                         (i "Qualidade de Vida.") " Ciência séria. Cuidado humano.")
-                      (ul (@ (class "list-none p-0 flex flex-col sm:flex-row flex-wrap gap-4 mt-8"))
-                          (li (a (@ (class "w-full sm:w-auto inline-flex items-center justify-center gap-2 font-bold py-3.5 px-6 rounded-full bg-[#25D366] text-white shadow-md hover:bg-med-green-light transition ease-in-out duration-150") 
-                                    (href "https://wa.me/5585997491882"))
-                                 (i (@ (class "fab fa-whatsapp text-xl"))) " Agendar consulta pelo WhatsApp"))
-                          (li (a (@ (class "w-full sm:w-auto inline-flex items-center justify-center gap-2 font-medium py-3.5 px-6 rounded-full bg-med-bg text-med-green border border-med-green/20 shadow-sm hover:bg-white transition ease-in-out duration-150") 
-                                    (href "#area-atuacao")) 
-                                 "Saiba Mais sobre o Tratamento")))))))
+
+  `(section (@ (id "inicio") (class "relative min-h-screen flex items-center py-16 md:py-20 bg-med-green overflow-hidden"))
+          
+          ;; Grafismo de fundo (se mantiver)
+          (img (@ (class "absolute bottom-[5%] right-[-10%] scale-150 opacity-10 brightness-0 invert md:bottom-[10%] md:right-[10%] md:scale-[250%]") 
+               (src "assets/img/grafismo.svg")))
+          
+          (div (@ (class "container mx-auto px-4 md:px-5 max-w-5xl"))
+            ;; 🔄 CORREÇÃO AQUI: Criamos um grid de 2 colunas para o Desktop. No mobile, empilha.
+            (div (@ (class "grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center w-full"))
+              
+              ;; 📸 IMAGEM AVATAR: Aparece primeiro no mobile (order-1) e vai para a direita no desktop (md:col-span-5 md:order-2)
+              (div (@ (class "order-1 md:order-2 md:col-span-5 flex justify-center"))
+                (img (@ (class "w-48 h-48 md:w-80 md:h-80 aspect-square rounded-full object-cover shadow-xl border-4 border-white/10") 
+                     (src "assets/img/avatar.jpeg"))))
+
+              ;; 📝 TEXTO HERO: Fica abaixo da foto no mobile (order-2) e assume a esquerda no desktop (md:col-span-7 md:order-1)
+              (div (@ (class "order-2 md:order-1 md:col-span-7 z-10 w-full"))
+                (h1 (@ (class "font-serif text-4xl md:text-5xl font-bold text-white/95 leading-tight tracking-tight max-w-3xl border-b-2 border-med-gold pb-3")) 
+                    "Saúde que vai à raiz.")
+                (p (@ (class "text-base md:text-lg text-white/90 max-w-2xl mt-4 leading-relaxed"))
+                   "Consultas médicas especializadas em Cannabis medicinal com abordagem integrativa, preventiva e promotora de " 
+                   (i "Qualidade de Vida.") " Ciência séria. Cuidado humano.")
+                
+                (ul (@ (class "list-none p-0 flex flex-col sm:flex-row flex-wrap gap-4 mt-8"))
+                  (li (a (@ (class "w-full sm:w-auto inline-flex items-center justify-center gap-2 font-bold py-3.5 px-6 rounded-full bg-[#25D366] text-white shadow-md hover:bg-emerald-600 transition ease-in-out duration-150") 
+                             (href "https://wa.me/5585997491882"))
+                         (i (@ (class "fab fa-whatsapp text-xl"))) " Agendar consulta pelo WhatsApp"))
+                  (li (a (@ (class "w-full sm:w-auto inline-flex items-center justify-center gap-2 font-medium py-3.5 px-6 rounded-full bg-med-bg text-med-green border border-med-green/20 shadow-sm hover:bg-white transition ease-in-out duration-150") 
+                             (href "#area-atuacao")) 
+                         "Saiba Mais sobre o Tratamento"))))))))
         
 ;;; Área de Atuação
 
@@ -218,7 +230,7 @@
                   (div (@ (class "mt-6 space-y-4 text-stone-700 text-sm md:text-base leading-relaxed"))
                     (p "Marco Antônio Machado, nascido em 2 de Dezembro de 1960, é médico formado pela Universidade Federal do Ceará (UFC). É concursado no município de Cascavel (CE), onde trabalha há mais de 20 anos na Atenção Primária à Saúde.")
                     (p "Sua atuação clínica sempre foi orientada pela saúde integral — não pelo sintoma isolado, mas pelo ser humano como um todo (Visão Sistêmica da Vida).")
-                    (p "Há mais de 5 anos, é um dos médicos pioneers na prescrição de Cannabis medicinal no Ceará, e testemunha diária das transformações na vida de crianças com autismo à idosos com Alzheimer e Parkinson — experiências que aprofundaram sua convicção sobre o potencial terapêutico dos canabinóides quando prescritos com responsabilidade e ciência.")
+                    (p "Há mais de 5 anos, é um dos médicos pioneiros na prescrição de Cannabis medicinal no Ceará, e testemunha diária das transformações na vida de crianças com autismo à idosos com Alzheimer e Parkinson — experiências que aprofundaram sua convicção sobre o potencial terapêutico dos canabinóides quando prescritos com responsabilidade e ciência.")
                     (p "Além de médico, é avô de 12 netos e agroflorestador na Pachamama. Gosta de plantar árvores, água, ar e sonhos."))
                   (div (@ (class "flex flex-wrap gap-2 mt-6"))
                     (span (@ (class "bg-[#1b3a2f]/10 text-[#1b3a2f] text-xs md:text-sm py-1.5 px-3 rounded-full")) "Medicina Integrativa")
