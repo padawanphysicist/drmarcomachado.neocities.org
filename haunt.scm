@@ -15,5 +15,7 @@
       ;; reader list is empty; the index page is generated directly by
       ;; its own builder below.
       #:readers '()
-      #:builders (list index-page
-                        (static-directory "assets")))
+      #:file-filter (make-file-filter '("^\\." "^#" "~$" "default.input.css" "\\.bash$"))
+      #:builders (list
+                  index-page
+                  (static-directory "assets")))
