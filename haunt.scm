@@ -7,10 +7,9 @@
              (pages index))
 
 (site #:title "Dr. Marco Antônio Machado — Medicina Canabinóide"
-      #:domain "example.com"
-      #:default-metadata
-      '((author . "Dr. Marco Antônio Machado")
-        (email  . "contato@example.com"))
+      #:domain "drmarcomachado.neocities.org"
+      #:default-metadata '((author . "@vct")
+                           (email  . "vct.santos@protonmail.com"))
       ;; No blog posts are read from disk for this landing page, so the
       ;; reader list is empty; the index page is generated directly by
       ;; its own builder below.

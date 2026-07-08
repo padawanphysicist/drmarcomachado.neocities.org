@@ -230,7 +230,7 @@
                 
                 ;; Bloco da Imagem (Agora com mb-6 para dar respiro no mobile)
                 (div (@ (class "w-full md:w-1/2 flex justify-center mb-6 md:mb-0"))
-                  (img (@ (class "rounded-2xl max-w-full h-auto max-h-[400px] md:max-h-[650px] object-cover shadow-md") (src "https://placehold.co/500x750?text=Fotografia")))))))))
+                  (img (@ (class "rounded-2xl max-w-full h-auto max-h-[400px] md:max-h-[650px] object-cover shadow-md") (src "assets/img/o-medico.jpeg")))))))))
 
 ;;; Evidências
 
